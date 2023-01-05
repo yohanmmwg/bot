@@ -19,27 +19,29 @@ const JsonFileAdapter = require('@bot-whatsapp/database/json')
  *
  * Primero declaras los submenus 1.1 y 2.1, luego el 1 y 2 y al final el principal.
  */
+const flow_anal_3 = addKeyword(['zapatos2', '2'])
+    .addAnswer('🤯 paso numero 3.')
 
 const flowBolsos2 = addKeyword(['bolsos2', '2'])
     .addAnswer('🤯 *MUCHOS* bolsos ...')
     .addAnswer('y mas bolsos... bla bla')
 
-const flowZapatos2 = addKeyword(['zapatos2', '2'])
+const flow_anal_2 = addKeyword(['zapatos2', '2'])
     .addAnswer('🤯 repito que tengo *MUCHOS* zapatos.')
     .addAnswer('y algunas otras cosas.')
 
-const flowZapatos = addKeyword(['1', 'zapatos', 'ZAPATOS'])
+const flow_anal_1 = addKeyword(['1', 'zapatos', 'ZAPATOS'])
     .addAnswer('🤯 Veo que elegiste zapatos')
     .addAnswer('Tengo muchos zapatos...bla bla')
     .addAnswer(
-        ['Manda:', '*(2) Zapatos2*', 'para mas información'],
+        ['Manda:', '*(2) Zapatos2*','*(2) Zapatos2*', 'para mas información'],
         { capture: true },
         (ctx) => {
             console.log('Aqui puedes ver más info del usuario...')
             console.log('Puedes enviar un mail, hook, etc..')
             console.log(ctx)
         },
-        [flowZapatos2]
+        [flow_anal_2,flow_anal_3]
     )
 
 const flowBolsos = addKeyword(['2', 'bolsos', 'BOLSOS'])
@@ -71,7 +73,7 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
             console.log('Puedes enviar un mail, hook, etc..')
             console.log(ctx)
         },
-        [flowBolsos, flowZapatos]
+        [flowBolsos, flow_anal_1]
     )
 
 const main = async () => {
