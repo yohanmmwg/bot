@@ -62,9 +62,9 @@ const flowBolsos = addKeyword(['2', 'bolsos', 'BOLSOS'])
 
 const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
     .addAnswer(['🛠⚒ Hola, bienvenido al servicio tecnico de tecknicam🛠⚒ ', '¿Como puedo ayudarte?'])
-    .addAnswer(['Reparaciones', 'sexo', 'garantias', 'molestar'])
+    .addAnswer(['Reparaciones', 'sexo', 'garantias', 'molestar','Anal'])
     .addAnswer(
-        ['Para continuar escribe:', '*(1) Zapatos*', '*(2) Bolsos*'],
+        ['Para continuar escribe:', '*(1) Anal*', '*(2) Bolsos*'],
         { capture: true },
         (ctx) => {
             console.log('Aqui puedes ver más info del usuario...')
